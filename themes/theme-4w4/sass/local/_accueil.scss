@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 100vh;
+    color: white;
+    @include media-desktop{
+        color: black;
+    }
+}
+
+body.home::after{
+    width: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background-color: rgb(9, 16, 31);
+    @include media-desktop{
+        clip-path: polygon(75% 0, 100% 0, 100% 100%, 38% 100%);
+    }
+}
+
+#page{
+    padding: 10px;
+}
+
+.site-branding {
+    margin-bottom: 5vh;
+    p{
+      margin: 0px;  
+    }
+}
+
+.site-title {
+    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 3rem);
+    font-family: $font_title;
+        a{
+            text-decoration: none;    
+        }
+}
+
+.site-description { 
+    font-family: $font_title;
+    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 1.5rem);
+    font-weight: normal;
+    padding: 0;
+    margin-top: 0;
+}
+
+// contenue de la page, pas encore fait
+.entry-content{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(.9rem, #{"-.8rem + 8.333vw"}, 1.5rem);
+    text-align: center;
+    p{
+        margin-top: 0%;
+        width: 100%;
+    }
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .wp-block-image{
+        align-self: center;
+    }
+    img{
+        display: block;
+        border-radius: 10px;
+    }
+
+    @include media-desktop{
+        flex-direction: row;
+        text-align: start;
+        p{
+            width: 30%;
+        }
+        ul{
+            margin-right: 5vh;
+        }
+    }
+}
